@@ -8,4 +8,4 @@ before_script:
   - psql -c 'create database refunds_test;' -U postgres
 
 script:
-   - bundle exec rake build
+   - RAILS_ENV=test bundle exec rake db:create --trace
