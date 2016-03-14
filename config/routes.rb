@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  post '/refundations', to: 'refundations#accept'
   devise_for :users
   resources :users
   resources :applications
   resources :categories
+  resources :refundations
   root 'applications#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

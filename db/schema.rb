@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314153152) do
+ActiveRecord::Schema.define(version: 20160314164119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,17 @@ ActiveRecord::Schema.define(version: 20160314153152) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "refundations", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "amount_of_money"
+    t.date     "time"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "refundations", ["user_id"], name: "index_refundations_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -76,4 +87,5 @@ ActiveRecord::Schema.define(version: 20160314153152) do
 
   add_foreign_key "applications", "categories"
   add_foreign_key "applications", "users"
+  add_foreign_key "refundations", "users"
 end

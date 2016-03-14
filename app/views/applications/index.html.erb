@@ -9,7 +9,9 @@
     <div> To jest admin </div>
     <%= link_to('Nowa kategoria', new_category_path) %>
     <% @applications.each do |a| %>
-      <div> <%= a.name %> </div>
+      <%if a.acceptance==false %>
+        <div> <%= a.name %><%= link_to("Akceptuj", refundations_path(a), method: :post)%> </div>
+      <%end%>
     <%end%>
   <%else%>
     <div> To jest zwykły user </div>

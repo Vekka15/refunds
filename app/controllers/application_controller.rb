@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   def create
     application = Application.new(application_params)
     application.user_id = current_user.id
+    application.acceptance = false
     if application.save
       redirect_to root_path
     else
