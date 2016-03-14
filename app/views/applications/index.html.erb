@@ -1,9 +1,6 @@
 
 <% if current_user.nil? %>
-<nav>
-  <%= link_to("Sign in",new_user_session_path) %>
-  <%= link_to("Sign up", new_user_registration_path) %>
-</nav>
+
 <%else%>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   <% if current_user.admin? %>
@@ -24,8 +21,6 @@
           <%elsif a.acceptance == false %> Rejected
           <%elsif a.acceptance == nil %> Waiting
           <%end%> </div>
-
-
         <%end%>
       <%end%>
     <%end%>

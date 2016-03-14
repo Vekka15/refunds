@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @applications = Application.all
+    if current_user.nil?
+      redirect_to new_user_session_path
+    else
+      @applications = Application.all
+    end
   end
 
   def new
