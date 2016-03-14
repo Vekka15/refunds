@@ -11,10 +11,15 @@ class ApplicationController < ActionController::Base
     @application = Application.new
   end
 
+  def reject
+    app = Application.find(params[:format])
+    app.update_attribute :acceptance, false
+    redirect_to root_path
+  end
+
   def create
     application = Application.new(application_params)
     application.user_id = current_user.id
-    application.acceptance = false
     if application.save
       redirect_to root_path
     else

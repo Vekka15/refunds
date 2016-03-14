@@ -1,3 +1,4 @@
+
 <% if current_user.nil? %>
 <nav>
   <%= link_to("Sign in",new_user_session_path) %>
@@ -9,8 +10,8 @@
     <div> To jest admin </div>
     <%= link_to('Nowa kategoria', new_category_path) %>
     <% @applications.each do |a| %>
-      <%if a.acceptance==false %>
-        <div> <%= a.name %><%= link_to("Akceptuj", refundations_path(a), method: :post)%> </div>
+      <%if a.acceptance==nil %>
+        <div> <%= a.name %><%= link_to("Akceptuj", refundations_path(a), method: :post)%> <%= link_to("Odrzuć", applications_path(a), method: :put) %> </div>
       <%end%>
     <%end%>
   <%else%>
@@ -18,7 +19,13 @@
     <%= link_to('Nowy',new_application_path) %>
       <% @applications.each do |a| %>
         <%if(a.user_id==current_user.id) %>
-        <div><%= a.name %></div>
+        <div><%= a.name %>
+          <% if a.acceptance==true %> Accepted
+          <%elsif a.acceptance == false %> Rejected
+          <%elsif a.acceptance == nil %> Waiting
+          <%end%> </div>
+
+
         <%end%>
       <%end%>
     <%end%>
