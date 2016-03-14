@@ -1,8 +1,10 @@
 class RefundationsController < ApplicationController
   def accept
+    app = Application.find(params[:format])
+    app.update_attribute :acceptance, true
     refundation = Refundation.new()
-    refundation.name = "nazwa"
-    refundation.amount_of_money = params[:format]
+    refundation.name = app.name
+    refundation.amount_of_money = (app.amount_of_money*Category.find(app.category_id).percent)/100
     refundation.save
     redirect_to root_path
   end

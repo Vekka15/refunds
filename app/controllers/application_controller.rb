@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   def application_params
-    params.require(:application).permit(:name,:amount_of_money)
+    params.require(:application).permit(:name,:amount_of_money,:category_id)
   end
 end
