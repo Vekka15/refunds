@@ -3,7 +3,9 @@ rvm:
   - 2.2.3
 env:
   - DB=postgresql
-
 before_script:
   - psql -c "CREATE USER vekka WITH PASSWORD 'prosiak098';" -U postgres
   - psql -c 'create database refunds_test;' -U postgres
+
+script:
+   - bundle exec rake build
