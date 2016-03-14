@@ -1,0 +1,23 @@
+<% if current_user.nil? %>
+<nav>
+  <%= link_to("Sign in",new_user_session_path) %>
+  <%= link_to("Sign up", new_user_registration_path) %>
+</nav>
+<%else%>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% if current_user.admin? %>
+    <div> To jest admin </div>
+    <%= link_to('Nowa kategoria', new_category_path) %>
+    <% @applications.each do |a| %>
+      <div> <%= a.name %> </div>
+    <%end%>
+  <%else%>
+    <div> To jest zwykły user </div>
+    <%= link_to('Nowy',new_application_path) %>
+      <% @applications.each do |a| %>
+        <%if(a.user_id==current_user.id) %>
+        <div><%= a.name %></div>
+        <%end%>
+      <%end%>
+    <%end%>
+<%end%>

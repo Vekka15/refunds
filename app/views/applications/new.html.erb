@@ -1,0 +1,10 @@
+<div> Nowy app </div>
+
+<%= form_for @application do |a| %>
+<div> <%= a.label :name %> </div>
+<div> <%= a.text_field :name %> </div>
+<div> <%= a.label :amount_of_money %> </div>
+<div> <%= a.text_field :amount_of_money %> </div>
+
+<%= a.submit %>
+<%end%>
