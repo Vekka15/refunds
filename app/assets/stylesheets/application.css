@@ -2,7 +2,6 @@ body{
   background-color: #343d46;
   color: white;
   text-align: center;
-  margin-top: 5%;
   font-family: Arial;
 }
 
@@ -23,12 +22,11 @@ body{
   color: #65737e;
   text-decoration: none;
   font-size: 15px;
-
 }
 
 #title{
   text-transform: uppercase;
-  /*margin-left: 8%;*/
+  margin-top: 5%;
   margin-bottom: 10%;
   font-size: 40px;
 }
@@ -41,4 +39,78 @@ body{
   width: 30%;
   height: 30px;
   font-size: 20px;
+}
+
+/* styl layoutu admina */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #343d46;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+  background-color: black;
+}
+
+/* styl dla submenu */
+
+ul.submenu{
+  list-style-type: none;
+  background-color: #65737e;
+  margin-top: 3.60%;
+  margin-bottom:5%;
+  margin-left: 0;
+  overflow: hidden;
+}
+
+li.submenu{
+    float: left;
+}
+
+li a.submenu {
+  text-decoration: none;
+  margin-left: 0;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  display: block;
+  font: 17px/1 Helvetica, Verdana, sans-serif;
+}
+
+a:hover.side-menu{
+  background-color: #36454f;
+  padding: 10px;
+  margin-left: 0;
+}
+
+/*kolorowanie elementu na pasku nawigacyjnym w zależności na której stronie się znajdujemy */
+body.app a.app:link,
+body.categories a.categories:link{
+	color: white ;
+	background-color: #419873;
+}
+
+body.app a.app:hover,
+body.categories a.categories:hover{
+	color: white ;
+	background-color: #419873;
 }

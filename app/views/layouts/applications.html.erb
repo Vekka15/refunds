@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Refunds</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="background-color: white" class="app">
+  <ul class="pasek">
+    <li class="pasek"> <%= link_to("Categories", categories_path, :class => "categories") %> </li><li> <%= link_to("Applications", applications_path, :class => "app") %> </li><li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+  </ul>
+<%= yield %>
+
+</body>
+</html>
