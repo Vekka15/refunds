@@ -1,0 +1,16 @@
+<body>
+<table align="center" style="margin-top: 10%">
+  <tr>
+    <th> Name </th>
+    <th> Percent </th>
+    <th> Refundations </th>
+  </tr>
+<% @categories.each do |c| %>
+  <tr>
+    <td><%= c.name %></td>
+    <td><%= c.percent %></td>
+    <td><%= c.refundations.size %></td>
+  </tr>
+<%end%>
+</table>
+</body>

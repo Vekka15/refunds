@@ -5,9 +5,25 @@
   <% if current_user.admin? %>
     <div> To jest admin </div>
     <%= link_to('Nowa kategoria', new_category_path) %>
+    <table align="center" style="margin-top: 5%">
+      <tr>
+        <th> Name </th>
+        <th> Date </th>
+        <th> Money </th>
+        <th> Category </th>
+        <th> Accept </th>
+        <th> Reject </th>
+      </tr>
     <% @applications.each do |a| %>
       <%if a.acceptance==nil %>
-        <div> <%= a.name %><%= link_to("Akceptuj", refundations_path(a), method: :post)%> <%= link_to("Odrzuć", applications_path(a), method: :put) %> </div>
+      <tr>
+        <td><%= a.name %></td>
+        <td><%= a.created_at.strftime("%d-%m-%Y") %></td>
+        <td><%= a.amount_of_money %></td>
+        <td><%= Category.find(a.category_id).name %></td>
+        <td>  <%= link_to("Akceptuj", refundations_path(a), method: :post)%></td>
+        <td>  <%= link_to("Odrzuć", applications_path(a), method: :put) %></td>
+      </tr>
       <%end%>
     <%end%>
   <%else%>
@@ -24,14 +40,14 @@
         <%if(a.user_id==current_user.id) %>
         <tr>
           <td><%= a.name %></td>
-          <td><%= a.created_at %> </td>
+          <td><%= a.created_at.strftime("%d-%m-%Y") %> </td>
           <td> <%= a.amount_of_money%> </td>
           <td> <%= Category.find(a.category_id).name %> </td>
           <% if a.acceptance==true %><td> Accepted</td>
           <%elsif a.acceptance == false %> <td>Rejected</td>
           <%elsif a.acceptance == nil %><td> Waiting </td>
           <%end%>
-          <tr>
+        </tr>
         <%end%>
       <%end%>
     </table>
