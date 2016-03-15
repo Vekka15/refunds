@@ -1,6 +1,6 @@
 == README
 
-Refunds [![Build Status](https://travis-ci.org/Vekka15/refunds.svg?branch=master)](https://travis-ci.org/Vekka15/refunds)
+Refunds {<img src="https://travis-ci.org/Vekka15/refunds.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/Vekka15/refunds]
 
 Rails version: 4.2.6
 Ruby version: 2.3.0
