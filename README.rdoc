@@ -1,6 +1,6 @@
 == REFUNDS   {<img src="https://travis-ci.org/Vekka15/refunds.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/Vekka15/refunds]
 
-Rails version: 4.2.6
-Ruby version: 2.3.0
-Database: postgresql
+#Rails version: 4.2.6
+#Ruby version: 2.3.0
+#Database: postgresql
 
