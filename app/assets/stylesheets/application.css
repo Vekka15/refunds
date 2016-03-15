@@ -169,3 +169,11 @@ th{
   padding-left: 60px;
   padding-right: 60px;
 }
+
+/*akceptuj i odrzuc icona*/
+
+.logo{
+  overflow: hidden;
+  background: url(yes.png) no-repeat ;
+  background-color: green;
+}

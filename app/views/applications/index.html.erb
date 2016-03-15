@@ -21,11 +21,19 @@
         <td><%= a.created_at.strftime("%d-%m-%Y") %></td>
         <td><%= a.amount_of_money %></td>
         <td><%= Category.find(a.category_id).name %></td>
-        <td>  <%= link_to("Akceptuj", refundations_path(a), method: :post)%></td>
-        <td>  <%= link_to("Odrzuć", applications_path(a), method: :put) %></td>
+        <td>
+          <%= link_to refundations_path(a), method: :post, id: "logo" do %>
+          <%= image_tag("yes_green.png", height: '30', width: '30', :class=>"image") %>
+        <% end %>
+      </td>
+        <td><%= link_to applications_path(a), method: :put, id: "logo" do %>
+          <%= image_tag("no_green.png", height: '30', width: '30') %>
+        <% end %>
+      </td>
       </tr>
       <%end%>
     <%end%>
+  </table>
   <%else%>
     <div style="margin-top: 12%">
       <table align="center">
@@ -43,9 +51,9 @@
           <td><%= a.created_at.strftime("%d-%m-%Y") %> </td>
           <td> <%= a.amount_of_money%> </td>
           <td> <%= Category.find(a.category_id).name %> </td>
-          <% if a.acceptance==true %><td> Accepted</td>
-          <%elsif a.acceptance == false %> <td>Rejected</td>
-          <%elsif a.acceptance == nil %><td> Waiting </td>
+          <% if a.acceptance==true %><td> <%= image_tag("yes.png", height: '30', width: '30') %></td>
+          <%elsif a.acceptance == false %> <td><%= image_tag("no.png", height: '30', width: '30') %></td>
+          <%elsif a.acceptance == nil %><td><%= image_tag("wait.png", height: '30', width: '30') %></td>
           <%end%>
         </tr>
         <%end%>
