@@ -1,12 +1,11 @@
 <body>
+   
 <%= form_for @category do |c| %>
-<div style="margin-top: 10%">
-  <%= c.label :name, :style=>"margin: 10" %>
-  <%= c.text_field :name %><br>
-  <%= c.label :percent %>
-  <%= c.text_field :percent %>
+<div style="margin-top: 15%">
+  <%= c.text_field :name, :placeholder => :name, :class => "login_text_field" %><br>
+  <%= c.text_field :percent, :placeholder => :percent, :class => "login_text_field" %>
   <br>
-  <%= c.submit %>
+  <%= c.submit :class => "login_submit" %>
 </div>
 <%end%>
 </body>

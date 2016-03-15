@@ -9,7 +9,7 @@
 <body style="background-color: white" class="categories">
   blablabla
   <ul>
-    <li> <%= link_to("Categories", categories_path, :class => "categories") %> </li><li> <%= link_to("Applications", applications_path, :class => "app") %> </li><li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+    </li><li> <%= link_to("Applications", applications_path, :class => "app") %> </li><li> <%= link_to("Categories", categories_path, :class => "categories") %> <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
   </ul>
   <ul class="submenu">
     <li class="submenu"> <%= link_to("New", new_category_path, :class=>"submenu") %>

@@ -1,11 +1,11 @@
 <div> Nowy app </div>
-
+<div style="margin-top: 15%">
 <%= form_for @application do |a| %>
-<div> <%= a.label :name %> </div>
-<div> <%= a.text_field :name %> </div>
-<div> <%= a.label :amount_of_money %> </div>
-<div> <%= a.text_field :amount_of_money %> </div>
-<div><%= a.collection_select :category_id,Category.all,:id, :name, {prompt: "Wybierz"}, {class: "select-tab"} %></div>
+<%= a.text_field :name,:placeholder => :name, :class => "login_text_field" %><br>
+<%= a.text_field :amount_of_money,:placeholder => :amount_of_money, :class => "login_text_field" %><br>
+<%= a.collection_select :category_id,Category.all,:id, :name, {prompt: "Select category"}, {class: "select_list "} %><br>
 
-<%= a.submit %>
+<%= a.submit :class => "login_submit" %>
+
 <%end%>
+</div>

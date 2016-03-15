@@ -31,15 +31,37 @@ body{
   font-size: 40px;
 }
 
-.field{
-  margin-bottom: 2%;
-}
 
 .login_text_field{
   width: 30%;
   height: 30px;
   font-size: 20px;
+  margin-bottom: 2%;
 }
+
+.login_text_field:focus{
+  width: 30%;
+  height: 30px;
+  font-size: 20px;
+  border: solid 2px #fff;
+  border-color: #419873;
+  border-radius: 4px;
+}
+
+.select_list{
+  width: 30%;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 20px;
+  overflow: hidden;
+  background: url(new_arrow.png) no-repeat right #ddd;
+  border: 1px solid #ccc;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
 
 /* styl layoutu admina */
 
