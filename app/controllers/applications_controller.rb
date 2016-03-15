@@ -20,9 +20,9 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    application = Application.new(application_params)
-    application.user_id = current_user.id
-    if application.save
+    @application = Application.new(application_params)
+    @application.user_id = current_user.id
+    if @application.save
       redirect_to root_path
     else
       render 'new'
