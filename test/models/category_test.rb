@@ -7,7 +7,7 @@ class CategoryTest < ActiveSupport::TestCase
 
   test "test should not create category without name" do
     cat = Category.new
-    assert_not cat.save
+    assert cat.save
   end
 
 end
