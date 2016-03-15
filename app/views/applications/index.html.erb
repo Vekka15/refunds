@@ -11,16 +11,31 @@
       <%end%>
     <%end%>
   <%else%>
-    <div> To jest zwykły user </div>
-    <%= link_to('Nowy',new_application_path) %>
+    <div style="margin-top: 12%">
+      <table align="center">
+        <tr>
+          <th> Name </th>
+          <th> Date </th>
+          <th> Money </th>
+          <th> Category </th>
+          <th> State </th>
+        </tr>
       <% @applications.each do |a| %>
         <%if(a.user_id==current_user.id) %>
-        <div><%= a.name %>
-          <% if a.acceptance==true %> Accepted
-          <%elsif a.acceptance == false %> Rejected
-          <%elsif a.acceptance == nil %> Waiting
-          <%end%> </div>
+        <tr>
+          <td><%= a.name %></td>
+          <td><%= a.created_at %> </td>
+          <td> <%= a.amount_of_money%> </td>
+          <td> <%= Category.find(a.category_id).name %> </td>
+          <% if a.acceptance==true %><td> Accepted</td>
+          <%elsif a.acceptance == false %> <td>Rejected</td>
+          <%elsif a.acceptance == nil %><td> Waiting </td>
+          <%end%>
+          <tr>
         <%end%>
       <%end%>
+    </table>
+    </div>
     <%end%>
+
 <%end%>
