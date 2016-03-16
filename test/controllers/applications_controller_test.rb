@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ApplicationsControllerTest < ActionController::TestCase
+
   test "should get index when there is session" do
     sign_in User.first
     get :index

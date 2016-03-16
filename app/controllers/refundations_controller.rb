@@ -5,6 +5,7 @@ class RefundationsController < ApplicationController
     refundation = Refundation.new()
     refundation.name = app.name
     refundation.amount_of_money = (app.amount_of_money*Category.find(app.category_id).percent)/100
+    refundation.user_id = app.user_id
     refundation.save
     redirect_to root_path
   end
