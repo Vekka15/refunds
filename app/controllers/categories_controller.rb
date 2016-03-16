@@ -9,9 +9,12 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.new(category_params)
-    category.save
-    redirect_to root_path
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def category_params
