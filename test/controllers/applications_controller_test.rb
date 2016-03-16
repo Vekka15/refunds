@@ -11,6 +11,30 @@ class ApplicationsControllerTest < ActionController::TestCase
   test "should get index when there is no session" do
     get :index
     assert_nil assigns(:applications), "Index returned applications "
-    assert_redirected_to new_user_session_path, "There was now redirection to login page"
+    assert_redirected_to new_user_session_path, "There was no redirection to login page"
   end
+
+  test "should sign false to application acceptance" do
+    put(:reject, {'format' => '1'})
+    assert_equal false, Application.find(1).acceptance, "Did not set acceptance to false"
+    assert_redirected_to root_path, "There was wrong redirection"
+  end
+
+  test "should create new applications with succes" do
+    sign_in User.first
+    assert_difference 'Application.count' do
+      post :create, application: {name: "abcd", amount_of_money: 1000, category_id: categories(:one).id}
+    end
+    assert_redirected_to root_path, "There was wrong redirection"
+  end
+
+  test "should create new applications without succes" do
+    sign_in User.first
+    assert_no_difference 'Application.count', "Application was created" do
+      post :create, application: {name: 1234, amount_of_money: 1000, category_id: categories(:one).id}
+    end
+    assert_template 'new', "There was wrong redirection"
+  end
+
+
 end
