@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
+      CategoryMailer.report_email.deliver_now
       redirect_to root_path
     else
       render 'new'
