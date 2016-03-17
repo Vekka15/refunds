@@ -6,7 +6,7 @@ env:
 before_script:
   - psql -c "CREATE USER vekka WITH PASSWORD 'prosiak098';" -U postgres
   - psql -c 'create database refunds_test;' -U postgres
-  - psql -c 'alter user vekka with superuser;' -U postgres
+  - psql -c 'alter user vekka with superuser;' -U postgres #fixing fixtures problem in travis CI
 
 script:
    - RAILS_ENV=test bundle exec rake db:create --trace

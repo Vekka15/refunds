@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class CategoryMailerTest < ActionMailer::TestCase
-  test "invite" do
+class ReportMailerTest < ActionMailer::TestCase
+  test "should add message to queue" do
     # Send the email, then test that it got queued
     email = CategoryMailer.report_email.deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
