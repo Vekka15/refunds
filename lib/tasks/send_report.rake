@@ -1,6 +1,11 @@
+
+
 desc "Sending reports about refundations to admin at the end of month"
 task :send_report => :environment do
-  puts "Sending a report"
-  SendReportWorker.new.perform
-  puts "done."
+  require 'rufus/scheduler'
+   scheduler = Rufus::Scheduler.singleton
+  scheduler.every '1s' do
+       puts "Test!"
+       SendReportWorker.new.perform
+  end
 end
