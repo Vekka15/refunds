@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.2.3
+  - 2.3.0
 env:
   - DB=postgresql
 before_script:
@@ -10,4 +10,4 @@ before_script:
 script:
    - RAILS_ENV=test bundle exec rake db:create --trace
    - RAILS_ENV=test bundle exec rake db:migrate --trace
-   - bundle exec rake test:models
+   - bundle exec rake test:controllers

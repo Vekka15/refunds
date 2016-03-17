@@ -16,8 +16,8 @@ class ApplicationsControllerTest < ActionController::TestCase
   end
 
   test "should sign false to application acceptance" do
-    put(:reject, {'format' => '1'})
-    assert_equal false, Application.find(1).acceptance, "Did not set acceptance to false"
+    put(:reject, {'format' => applications(:one).id})
+    assert_equal false, Application.find(applications(:one).id).acceptance, "Did not set acceptance to false"
     assert_redirected_to root_path, "There was wrong redirection"
   end
 

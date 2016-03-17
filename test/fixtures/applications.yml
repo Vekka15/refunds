@@ -3,11 +3,13 @@
 one:
   name: Test
   amount_of_money: 9.99
-  category_id:
+  category_id: categories(:one).id
   user_id:
+  acceptance:
 
 two:
   name: MyString
   amount_of_money: 9.99
-  category_id: 
+  category_id: categories(:one).id
   user_id:
+  acceptance:
