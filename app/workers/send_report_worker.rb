@@ -1,7 +1,6 @@
 class SendReportWorker
   include Sidekiq::Worker
-
-  def perform(project_id)
-
+  def perform
+    CategoryMailer.report_email.deliver_now
   end
 end

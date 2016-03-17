@@ -69,5 +69,7 @@ test:
 production:
   <<: *default
   database: refunds_production
-  username: refunds
-  password: <%= ENV['REFUNDS_DATABASE_PASSWORD'] %>
+  # username: refunds
+  # password: <%= ENV['REFUNDS_DATABASE_PASSWORD'] %>
+  username: vekka
+  password: prosiak098
