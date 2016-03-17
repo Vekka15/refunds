@@ -2,5 +2,6 @@
 
 # :day, :at => '12:20am'
 every 1.minutes do
+  puts 'dziala'
   rake "send_report", :output => 'log/check_status_rake.log'
 end
