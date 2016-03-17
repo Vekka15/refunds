@@ -3,6 +3,6 @@ require 'rufus/scheduler'
 
  scheduler.every '1m' do
       puts "Test!"
-      SendReportWorker.new.perform
+      # SendReportWorker.new.perform
       Rails.logger.info "hello, it's #{Time.now}"
  end
