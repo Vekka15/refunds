@@ -93,5 +93,5 @@ config.action_mailer.smtp_settings = {
   :user_name            => 'sendrefunds@gmail.com',
   :password             => 'admintest',
   :authentication       => 'plain',
-  :enable_starttls_auto => true  }0
+  :enable_starttls_auto => true  }
 end
