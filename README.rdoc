@@ -2,11 +2,11 @@
 
 Deployed on heroku: https://dry-badlands-69193.herokuapp.com
 
-Rails version: 4.2.6  
+Rails version: 4.2.6
 
 Ruby version: 2.3.0
 
-Database: postgresql  
+Database: postgresql
 
 Background worker: Sidekiq
 
@@ -14,4 +14,5 @@ Scheduler: rufus-scheduler
 
 Testing: Minitest
 
-
+For monthly scheduling report mails I used background worker Sidekiq and I'm running it in rufus-scheduler at /config/initializers/task_scheduler.rb. So the schedule starts every time server starts.
+To test mail sending you can us rake send_report.

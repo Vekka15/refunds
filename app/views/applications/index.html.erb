@@ -1,8 +1,7 @@
 
-<% if current_user.nil? %>
-
+<% if current_user.nil? %> <!-- if we are not logged in -->
 <%else%>
-  <% if current_user.admin? %>
+  <% if current_user.admin? %> <!-- if we are an admin -->
     <table align="center" style="margin-top: 5%">
       <tr>
         <th> Name </th>
@@ -32,7 +31,7 @@
       <%end%>
     <%end%>
   </table>
-  <%else%>
+  <%else%> <!-- if we are not an admin -->
     <div style="margin-top: 5%">
       <table align="center">
         <tr>
@@ -43,7 +42,7 @@
           <th> State </th>
         </tr>
       <% @applications.each do |a| %>
-        <%if(a.user_id==current_user.id) %>
+        <%if(a.user_id==current_user.id) %> <!-- only current user applications -->
         <tr>
           <td><%= a.name %></td>
           <td><%= a.created_at.strftime("%d-%m-%Y") %> </td>

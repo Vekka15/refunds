@@ -13,6 +13,7 @@ class ApplicationsController < ApplicationController
     @application = Application.new
   end
 
+  # rejecting application and changing is status
   def reject
     app = Application.find(params[:format])
     app.update_attribute :acceptance, false

@@ -11,15 +11,14 @@
     <%end%>
     <br>
     --------------------------------<br>
-    Summary:<br>
+    Summary:<br>   <!-- summary informations about all refundations in system -->
     --------------------------------<br>
     Number of granted refundations: <%= @refundations.size %> <br>
     Cost of refundations: <%= @refundations.sum("amount_of_money") %> <br>
     <br>
     --------------------------------<br>
-    Details(for each user):<br>
+    Details(for each user):<br>  <!-- showing basic informations about every user refunds -->
     --------------------------------<br>
-
     <% @users.each do |u| %>
       <% if u.admin!=true %>
         User: <%= u.email %> <br>
@@ -28,8 +27,5 @@
       --------------------------------<br>
       <%end%>
     <%end%>
-
-
-
   </body>
 </html>

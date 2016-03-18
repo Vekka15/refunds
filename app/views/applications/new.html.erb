@@ -1,8 +1,8 @@
-<div style="margin-top: 9%">
+
 <%= form_for @application do |a| %>
   <%if @application.errors.any? %>
   <% @application.errors.each do |attr,msg|  %>
-  <center><div class="message-box"><%=msg%></div></center>
+  <center><div class="message-box"><%=msg%></div></center> <!-- displaying error messages -->
   <% end %>
   <%end %>
   <br>
@@ -13,6 +13,4 @@
   <div><%= a.label "Category", :class => "labels", :style => "margin-right: 22%;" %></div>
   <div><%= a.collection_select :category_id,Category.all,:id, :name, {prompt: "Select category"}, {class: "select_list "} %></div>
   <div><%= a.submit :class => "login_submit" %></div>
-
 <%end%>
-</div>

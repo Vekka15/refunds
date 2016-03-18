@@ -6,22 +6,23 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<!-- navbars -->
 <body style="background-color: white" class="app">
-  <% if current_user.admin==true %>
-  <ul class="pasek">
-  <li> <%= link_to("Applications", applications_path, :class => "app") %> </li> <li class="pasek"> <%= link_to("Categories", categories_path, :class => "categories") %> </li>
-  <li style="float: right;"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-  <li class="login"> You are logged as, admin</li>
-  </ul>
-  <%elsif current_user.admin==nil%>
-  <ul class="pasek">
-  <li> <%= link_to("Applications", applications_path, :class => "app") %> </li>
-  <li style="float: right;"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-  <li class="login"> You are logged as,  <%= current_user.email %> </li>
-  </ul>
-  <ul class="submenu">
-    <li class="submenu"> <%= link_to("New", new_application_path, :class=>"submenu") %>
-  </ul>
+  <% if current_user.admin==true %> <!-- diffrent nav bar for admin -->
+    <ul class="pasek">
+    <li> <%= link_to("Applications", applications_path, :class => "app") %> </li> <li class="pasek"> <%= link_to("Categories", categories_path, :class => "categories") %> </li>
+    <li style="float: right;"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+    <li class="login"> You are logged as,<span style="color: #419873;"> admin</span></li>
+    </ul>
+  <%elsif current_user.admin==nil%> <!-- diffrent nav bar for user -->
+    <ul class="pasek">
+    <li> <%= link_to("Applications", applications_path, :class => "app") %> </li>
+    <li style="float: right;"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+    <li class="login"> You are logged as, <span style="color: #419873;">  <%= current_user.email %></span> </li>
+    </ul>
+    <ul class="submenu">
+      <li class="submenu"> <%= link_to("New", new_application_path, :class=>"submenu") %>
+    </ul>
   <% end %>
 <%= yield %>
 

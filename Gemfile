@@ -36,10 +36,6 @@ gem 'devise'
 
 gem "sidekiq"
 
-gem "foreman"
-
-gem "factory_girl_rails", "~> 4.0"
-
 gem 'rails_12factor', group: :production
 
 gem "rufus-scheduler"

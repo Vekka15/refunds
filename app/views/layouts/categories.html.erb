@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<!-- navbars -->
 <body style="background-color: white" class="categories">
   <ul>
   <li> <%= link_to("Applications", applications_path, :class => "app") %> </li><li> <%= link_to("Categories", categories_path, :class => "categories") %> </li><li style="float: right;"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li><li class="login"> You are logged as, admin</li>
