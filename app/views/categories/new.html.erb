@@ -1,11 +1,17 @@
 <body>
-   
+
 <%= form_for @category do |c| %>
-<div style="margin-top: 15%">
-  <%= c.text_field :name, :placeholder => :name, :class => "login_text_field" %><br>
-  <%= c.text_field :percent, :placeholder => :percent, :class => "login_text_field" %>
-  <br>
-  <%= c.submit :class => "login_submit" %>
+<div style="margin-top: 7%;">
+  <%if @category.errors.any? %>
+  <% @category.errors.each do |attr,msg|  %>
+  <center><div class="message-box"><%=msg%></div></center>
+  <% end %>
+  <%end %>
+  <div><%= c.label "Name", :class => "labels" %></div>
+  <div><%= c.text_field :name, :placeholder => :name, :class => "login_text_field" %></div>
+  <div><%= c.label "Percent",:class => "labels", :style => "margin-right: 24%;"%></div>
+  <div><%= c.text_field :percent, :placeholder => :percent, :class => "login_text_field" %></div>
+  <div>  <%= c.submit :class => "login_submit" %></div>
 </div>
 <%end%>
 </body>

@@ -27,7 +27,7 @@ body{
 #title{
   text-transform: uppercase;
   margin-top: 5%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   font-size: 40px;
   color: white;
 }
@@ -61,6 +61,23 @@ body{
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
+}
+
+.labels{
+  margin-top: 5px;
+  margin-right: 25%;
+  font-size: 25px;
+  color: #343d46;
+}
+
+.message-box{
+  width: 20%;
+  height: 20px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  color: #fe5757;
+  padding: 5px;
+  border: 2px solid #fe5757;
 }
 
 
