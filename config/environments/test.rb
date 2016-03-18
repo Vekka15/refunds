@@ -42,15 +42,24 @@ Rails.application.configure do
 
   ActionMailer::Base.delivery_method = :smtp
 
+# ActionMailer::Base.smtp_settings = {
+#   :address              => "smtp.gmail.com",
+#   :port                 => "587",
+#   :domain               => "gmail.com",
+#   :user_name            => "refundsApp@gmail.com",
+#   :password             => "admintest",
+#   :authentication       => "plain",
+#   :enable_starttls_auto => true
+# }
+
 ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => "587",
   :domain               => "gmail.com",
-  :user_name            => "refundsApp@gmail.com",
-  :password             => "ThisIsVeryStrongPassword",
+  :user_name            => "vekka15@gmail.com",
+  :password             => "G1607ka9ka",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
-
 
 end

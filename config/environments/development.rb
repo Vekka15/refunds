@@ -41,16 +41,25 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
 
-  ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.delivery_method = :smtp
 
-ActionMailer::Base.smtp_settings = {
+# ActionMailer::Base.smtp_settings = {
+#   :address              => "smtp.gmail.com",
+#   :port                 => "587",
+#   :domain               => "gmail.com",
+#   :user_name            => "refundsApp@gmail.com",
+#   :password             => "admintest",
+#   :authentication       => "plain",
+#   :enable_starttls_auto => true
+# }
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
-  :port                 => "587",
-  :domain               => "gmail.com",
-  :user_name            => "refundsApp@gmail.com",
-  :password             => "ThisIsVeryStrongPassword",
-  :authentication       => "plain",
-  :enable_starttls_auto => true
-}
-
+  :port                 => 587,
+  :user_name            => 'sendrefunds@gmail.com',
+  :password             => 'admintest',
+  :authentication       => 'plain',
+  :enable_starttls_auto => true  }
 end

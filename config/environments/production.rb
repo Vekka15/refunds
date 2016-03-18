@@ -93,7 +93,7 @@ config.action_mailer.smtp_settings = {
   domain: "gmail.com",
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: "refundsApp@gmail.com",
-  password: "ThisIsVeryStrongPassword"
+  user_name: "sendrefunds@gmail.com",
+  password: "admintest"
 }
 end
