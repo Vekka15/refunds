@@ -5,7 +5,7 @@
   </head>
   <body>
     <% if (@current_month!=1) %>
-      Refundation report for <%= Date::MONTHNAMES[@current_month]-1 %><br>
+      Refundation report for <%= Date::MONTHNAMES[@current_month-1] %><br>
     <%else%>
       Refundation report for <%= Date::MONTHNAMES[12]%><br>
     <%end%>
