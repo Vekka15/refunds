@@ -9,10 +9,9 @@
 <body style="background-color: white" class="app">
   <% if current_user.admin==true %>
   <ul class="pasek">
-  <li> <%= link_to("Applications", applications_path, :class => "app") %> </li>  <li class="pasek"> <%= link_to("Categories", categories_path, :class => "categories") %> </li>
+  <li> <%= link_to("Applications", applications_path, :class => "app") %> </li> <li class="pasek"> <%= link_to("Categories", categories_path, :class => "categories") %> </li>
   <li style="float: right;"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
   <li class="login"> You are logged as, admin</li>
-
   </ul>
   <%elsif current_user.admin==nil%>
   <ul class="pasek">

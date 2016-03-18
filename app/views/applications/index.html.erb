@@ -3,8 +3,6 @@
 
 <%else%>
   <% if current_user.admin? %>
-    <div> To jest admin </div>
-    <%= link_to('Nowa kategoria', new_category_path) %>
     <table align="center" style="margin-top: 5%">
       <tr>
         <th> Name </th>
@@ -35,7 +33,7 @@
     <%end%>
   </table>
   <%else%>
-    <div style="margin-top: 12%">
+    <div style="margin-top: 5%">
       <table align="center">
         <tr>
           <th> Name </th>

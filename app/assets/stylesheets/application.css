@@ -3,6 +3,7 @@ body{
   color:black;
   text-align: center;
   font-family: Arial;
+  margin: 0;
 }
 
 .login_submit{
@@ -83,28 +84,31 @@ body{
 
 /* styl layoutu admina */
 
-ul {
+ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #343d46;
-    position: fixed;
-    width: 100%;
     top: 0;
-    right: 0;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom:0;
+
 }
 
-li {
+li{
     float: left;
 }
 
-li a {
+li a{
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    margin: 0;
+
 }
 
 li.login{
@@ -118,6 +122,7 @@ li.login{
 
 li a:hover {
   background-color: black;
+  margin:0;
 }
 
 /* styl dla submenu */
@@ -125,7 +130,7 @@ li a:hover {
 ul.submenu{
   list-style-type: none;
   background-color: #65737e;
-  margin-top: 3%;
+  margin-top: 0;
   margin-bottom:5%;
   margin-left: 0;
   overflow: hidden;
