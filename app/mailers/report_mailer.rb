@@ -1,5 +1,6 @@
 class ReportMailer < ApplicationMailer
   def report_email
+    @users = User.all
     @current_month = Date.today.strftime("%m").to_i
     @current_year = Date.today.strftime("%Y").to_i
     @refundations = Refundation.where('extract(month from created_at) = ?', @current_month-1) #normalnie odjac jeden bo wysylamy 1 nastepnego miesiaca

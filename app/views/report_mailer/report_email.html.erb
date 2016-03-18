@@ -17,14 +17,19 @@
     Cost of refundations: <%= @refundations.sum("amount_of_money") %> <br>
     <br>
     --------------------------------<br>
-    Details:<br>
+    Details(for each user):<br>
     --------------------------------<br>
-    <% @refundations.each do |r| %>
-      Name:  <%= r.name %> <br>
-      Refunded money:  <%= r.amount_of_money %> <br>
-      Date:  <%= r.created_at %> <br>
-      Declarant: <%=User.find(r.user_id).email %> <br>
-    --------------------------------<br>
+
+    <% @users.each do |u| %>
+      <% if u.admin!=true %>
+        User: <%= u.email %> <br>
+        Number of granted refundations: <%= u.refundations.size %><br>
+        Sum of money granted: <%= u.refundations.sum("amount_of_money") %> <br>
+      --------------------------------<br>
+      <%end%>
     <%end%>
+
+
+
   </body>
 </html>
